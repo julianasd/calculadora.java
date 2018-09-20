@@ -1,0 +1,41 @@
+package triangulo;
+import java.util.Scanner;
+/**declaracion de la clase trinagulo para la recursividad
+ * @author Julian Rpdriguez
+ * @version 18/09/18
+ */
+public class Triangulo {
+    /**
+     * @param a
+     * @param b
+     * @return matriz
+     */
+    public static int triangulo(int a, int b){
+if (b==0 || a==b){
+        return 1;
+    } else {
+        return triangulo(a-1,b-1)+triangulo(a-1,b);
+    }
+}
+    public static void main(String[] args) {
+        Scanner leer = new Scanner (System.in);
+        int a;
+        System.out.println("Digite el tamaño de su triangulo");
+        a=leer.nextInt();
+        // se crea una matris
+        int triangulo[][]= new int[a][a];
+        for (int i = 0; i <a; i++) {
+            for (int j = 0; j <= i; j++) {
+                triangulo[i][j] = triangulo(i, j);
+            }
+        }
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j <= i; j++) {
+                // se elimuna el ln para que salga el triangulo
+                System.out.print(triangulo[i][j]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }  
+}
