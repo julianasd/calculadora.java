@@ -1,0 +1,21 @@
+package factortial;
+/**declaracion de la clase Factorial
+ * @author Julian Rodriguez
+ * @version 18/09/18
+ */
+public class Factortial {
+    /**
+     * @param num1
+     * @return serie fibo 
+     */
+    public static int factorial(int num1){
+       if(num1<=0){
+           return 1;
+       } else{
+           return num1*factorial(num1-1);
+       }
+    }
+    public static void main(String[] args) {
+        System.out.println(Factortial.factorial(12));   
+    }
+}
