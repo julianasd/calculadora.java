@@ -1,0 +1,49 @@
+package crypto;
+import java.io.*;
+/**En este programa, se encripta y desncripta frases
+ *@author Julian rodriguez Fuquen 
+ *@version 18/09/18
+ */
+public class Crypto {
+ 
+    public static void main(String[] args) {
+        BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        try
+        {
+            String  modified = "",frase ="";
+                   frase = br.readLine();
+                   frase = frase.toLowerCase();
+            
+                   
+            modified = frase;
+            modified = modified.replace("a" , "4");
+            modified = modified.replace("e" , "3");
+            modified = modified.replace("i" , "1");
+            modified = modified.replace("o" , "0");
+            modified = modified.replace("u" , "9");
+                char  array []= frase.toCharArray();
+                for (int i = 0; i < array.length; i++) {
+                    array [i]=(char)(array[i]+(char)1); 
+                }
+                
+                String encriptado = String.valueOf(array);
+                System.out.println("MODIFIED ENCRIPTADO : " +encriptado);
+                
+                char arrayD [] =  frase.toCharArray();
+                for (int i = 0; i < array.length; i++) {
+                arrayD [i] = (char)(arrayD[i]-(char)1);
+            }
+                String desencriptado = String.valueOf(arrayD);
+                System.out.println("MODIFIED DESENCRIPTADO: "+desencriptado);
+            
+                
+         bw.flush();
+        }
+           catch (Exception ex){   
+           }     
+        
+    
+    }
+    
+}
