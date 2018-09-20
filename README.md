@@ -1,2 +1,2 @@
-# calculadora.java
-El este menu podra observar diferentes casos a los cuales lo llevara a distintas operaciones segun el caso
+# README
+En los siguientes ejercicios, podra observar que en cada caso se utiliza minimo un funcion con las cuales se desarrolla cada ejercicio, la ejecucion es 
