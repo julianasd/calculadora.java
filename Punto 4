@@ -1,30 +1,38 @@
-package punto3;
+package punto4;
 import java.io.*;
-/**Se identifica que letra se respite dentro de una sub cadena
+/**Por medio de recursividad se identifica si una frase es palindromo o no
  @author Julian rodriguez Fuquen 
  *@version 18/09/18
  */
-public class Punto3 {
+
+public class Punto4 {
+    /**
+     * 
+     * @param frase
+     * @return si es palindromo o no
+     */
+    public static String palindromo(String frase){
+    if(frase.length()<=1){
+        return "Cumple con los parametros de un palindromo";
+    }else if(frase.charAt(0)== frase.charAt(frase.length()-1)){
+        return palindromo(frase.substring(1,frase.length()-1));
+    }else{
+        return "No cumple con los parametros de un palindromo";
+    }
+    }
     public static void main(String[] args) {
-        BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
+    BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
         BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
         try
         {
-          String palabra;
-          int x=0;
-          String sub = "jum";
-          palabra = br.readLine();
-            for (int i = 0; i <palabra.length(); i++) {
-                if(sub.equals(palabra.substring(i, 3 + i))){
-                    x++;
-                }
-                System.out.println(x + "\n");
-            }
-          
-         bw.flush();
+         String frase;
+         frase = br.readLine();
+            System.out.println(palindromo(frase));
+          bw.flush();
         }
            catch (Exception ex){   
-           }
+           }  
     }
+        
     
 }
